@@ -1,2 +1,3 @@
 # real-time-image-processing-
 this is the hardware acceleration of the image processor :)
+if your image is of other dimentions do thange apprpriately in the linebuffer module ,imageprocessing control module and other necessary mdoules ...
