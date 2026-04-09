@@ -165,10 +165,7 @@ wire clk_out3;
         .o_pix_addr(vga_pix_addr)
     );
     
-    // --- SYNC DELAY PIPELINE ---
-    // This aligns the Sync pulses with the data coming out of the line buffers.
-    // Since your module fills 3 lines, a value of 12 might need to be much higher 
-    // if the module waits for a full frame or line fill. 
+
      localparam LATENCY_TAP = 1450; 
     reg [1999:0] d_hsync, d_vsync, d_active;
     
