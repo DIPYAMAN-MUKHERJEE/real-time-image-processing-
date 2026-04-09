@@ -4,7 +4,7 @@
 module top
     (   input wire i_top_clk,       // 100MHz system clock
         input wire i_top_rst,       // Physical Reset Button
-        
+        input wire [6:0] kernel_sel,
         input wire  i_top_cam_start, 
         output wire o_top_cam_done, 
         
@@ -113,6 +113,7 @@ wire clk_out3;
 
     // RED CHANNEL
     imgprocon processor_R (
+    .kernel_sel(kernel_sel),
         .clk(w_clk25m),
         .dataready(1'b1),
         .reset(~r2_rstn_clk25m), // Convert Active-Low to Active-High for processor
@@ -125,6 +126,7 @@ wire clk_out3;
 
     // GREEN CHANNEL
    imgprocon processor_G (
+   .kernel_sel(kernel_sel),
      .clk(w_clk25m),
        .dataready(1'b1),
        .reset(~r2_rstn_clk25m), // Convert Active-Low to Active-High for processor
@@ -137,6 +139,7 @@ wire clk_out3;
 
     // BLUE CHANNEL
     imgprocon processor_B (
+    .kernel_sel(kernel_sel),
         .clk(w_clk25m),
         .dataready(1'b1),
         .reset(~r2_rstn_clk25m), // Convert Active-Low to Active-High for processor
